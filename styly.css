@@ -7,11 +7,13 @@
 
 h1 {
   font-family: "Lobster";
+  font-size: 50px;
+  font-weight: 400;
 }
 
 body {
   height: 100vh;
-  width: 33.33vw;
+  max-width: 400px;
   font-family: sans-serif;
   background: linear-gradient(to bottom, #615dad, #ffc8da);
   display: flex;
@@ -22,6 +24,7 @@ body {
   text-align: center;
   margin: 0 auto;
 }
+
 
 
 .buttons,
