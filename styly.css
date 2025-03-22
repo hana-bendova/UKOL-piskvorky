@@ -9,11 +9,12 @@ h1 {
   font-family: "Lobster";
   font-size: 50px;
   font-weight: 400;
+  margin-bottom: 5px;
 }
 
 body {
   height: 100vh;
-  max-width: 400px;
+  max-width: 390px;
   font-family: sans-serif;
   background: linear-gradient(to bottom, #615dad, #ffc8da);
   display: flex;
@@ -24,6 +25,14 @@ body {
   text-align: center;
   margin: 0 auto;
 }
+
+p {
+  font-size: 17px;
+  padding: 1rem;
+  line-height: 1.4;
+}
+
+
 
 
 
@@ -40,6 +49,9 @@ body {
 
 .box {
   height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .buttons {
@@ -58,6 +70,7 @@ body {
   align-items: center;
   justify-content: center;
   font-size: 1.2em;
+  margin: 1px 0;
 }
 
 .pravidla:hover {
