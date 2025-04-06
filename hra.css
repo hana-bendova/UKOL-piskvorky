@@ -1,0 +1,86 @@
+body {
+  background: linear-gradient(to bottom, #615dad, #ffc8da);
+  max-width: 80vmin;
+  min-height: 100vh;
+  margin: 0 auto;
+}
+
+h1 {
+  font-family: "Lobster";
+  font-size: 50px;
+  font-weight: 400;
+  margin-bottom: 5px;
+  color: #ffffff;
+  text-align: center;
+}
+
+h2 {
+  font-family: sans-serif;
+  color: #ffffff;
+}
+
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.play-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.play-buttons a {
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  color: #ffffff;
+}
+
+.home {
+  background-color: #1fcca4;
+}
+
+.home:hover {
+  background-color: #1cbb96;
+  cursor: pointer;
+}
+
+.restart {
+  background-color: #0197f6;
+}
+
+.restart:hover {
+  background-color: #0090e9;
+  cursor: pointer;
+}
+
+.area {
+  display: grid;
+  grid-template: repeat(10, 1fr) / repeat(10, 1fr);
+  border: 1px solid black;
+  width: 100%;
+  aspect-ratio: 1;
+}
+
+
+.playfield {
+  background: rgba(255, 255, 255, 0.4);
+  aspect-ratio: 1;
+  border: 1px solid rgb(94, 93, 93);
+  cursor: pointer;
+}
+
+
+.playfield:hover,
+.playfield:focus {
+  background: rgba(255, 255, 255, 0.6);
+  outline: none;
+}
