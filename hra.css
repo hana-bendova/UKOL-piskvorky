@@ -3,20 +3,21 @@ body {
   max-width: 80vmin;
   min-height: 100vh;
   margin: 0 auto;
+  color: #ffffff;
 }
+
+
 
 h1 {
   font-family: "Lobster";
   font-size: 50px;
   font-weight: 400;
   margin-bottom: 5px;
-  color: #ffffff;
   text-align: center;
 }
 
 h2 {
   font-family: sans-serif;
-  color: #ffffff;
 }
 
 
@@ -50,7 +51,6 @@ h2 {
 
 .home:hover {
   background-color: #1cbb96;
-  cursor: pointer;
 }
 
 .restart {
@@ -59,7 +59,6 @@ h2 {
 
 .restart:hover {
   background-color: #0090e9;
-  cursor: pointer;
 }
 
 .area {
@@ -82,5 +81,4 @@ h2 {
 .playfield:hover,
 .playfield:focus {
   background: rgba(255, 255, 255, 0.6);
-  outline: none;
 }
