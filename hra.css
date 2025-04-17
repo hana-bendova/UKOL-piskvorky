@@ -75,6 +75,9 @@ h2 {
   aspect-ratio: 1;
   border: 1px solid rgb(94, 93, 93);
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -82,3 +85,51 @@ h2 {
 .playfield:focus {
   background: rgba(255, 255, 255, 0.6);
 }
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.board__field--circle::before,
+.board__field--cross::before {
+  content: '';
+  display: block;
+  width: 80%;
+  height: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  animation: scaleUp 0.15s ease-out;
+}
+
+.board__field--circle::before {
+  background-image: url('circle_black.svg');
+}
+
+.board__field--cross::before {
+  background-image: url('cross_black.svg');
+}
+
+/*
+.board__field--circle {
+  background-image: url('circle_black.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80%;
+}
+
+.board__field--cross {
+  background-image: url('cross_black.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80%;
+}
+*/
