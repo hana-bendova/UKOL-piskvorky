@@ -1,3 +1,5 @@
+import { findWinner } from 'https://unpkg.com/piskvorky@0.1.4';
+
 let currentPlayer = 'circle';
 const gameButtons = document.querySelectorAll('.playfield');
 const currentPlayerIcon = document.querySelector('.foto img');
@@ -15,6 +17,27 @@ const placeCircle = (event) => {
     currentPlayer = 'circle';
   }
   clickedButton.disabled = true;
+
+  const boardState = [];
+  gameButtons.forEach((button) => {
+    if (button.classList.contains('board__field--circle')) {
+      boardState.push('o');
+    } else if (button.classList.contains('board__field--cross')) {
+      boardState.push('x');
+    } else {
+      boardState.push('_');
+    }
+  });
+
+  const winner = findWinner(boardState);
+
+  if (winner == 'o') {
+    alert('Vyhrálo kolečko');
+    location.reload();
+  } else if (winner == 'x') {
+    alert('Vyhrál křížek');
+    location.reload();
+  }
 };
 
 gameButtons.forEach((button) => {
