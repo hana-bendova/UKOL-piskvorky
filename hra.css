@@ -1,5 +1,6 @@
 body {
   background: linear-gradient(to bottom, #615dad, #ffc8da);
+  background-repeat: no-repeat;
   max-width: 80vmin;
   min-height: 100vh;
   margin: 0 auto;

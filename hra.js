@@ -4,7 +4,7 @@ let currentPlayer = 'circle';
 const gameButtons = document.querySelectorAll('.playfield');
 const currentPlayerIcon = document.querySelector('.foto img');
 
-const placeCircle = (event) => {
+const placeCircle = async (event) => {
   const clickedButton = event.target;
 
   if (currentPlayer === 'circle') {
@@ -38,6 +38,10 @@ const placeCircle = (event) => {
     alert('Vyhrál křížek');
     location.reload();
   }
+
+  if (currentPlayer == 'cross') {
+    await autoPlayCross(boardState);
+  }
 };
 
 gameButtons.forEach((button) => {
@@ -50,3 +54,23 @@ confirmRestar.addEventListener('click', (event) => {
     event.preventDefault();
   }
 });
+
+const autoPlayCross = async (boardState) => {
+  const response = await fetch(
+    'https://piskvorky.czechitas-podklady.cz/api/suggest-next-move',
+    {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        board: boardState,
+        player: 'x',
+      }),
+    },
+  );
+  const data = await response.json();
+  const { x, y } = data.position;
+  const field = gameButtons[x + y * 10];
+  field.click();
+};
